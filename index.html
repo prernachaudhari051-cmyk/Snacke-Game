@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro Neon Snake 🐍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="arcade-cabinet">
+    <!-- Header / Title -->
+    <header>
+      <h1>NEON SNAKE</h1>
+      <div class="hud">
+        <div class="hud-card">
+          <span class="hud-label">SCORE</span>
+          <span class="hud-val" id="score-val">0</span>
+        </div>
+        <div class="hud-card">
+          <span class="hud-label">HIGH SCORE</span>
+          <span class="hud-val highlight" id="high-score-val">0</span>
+        </div>
+        <div class="hud-card">
+          <span class="hud-label">SPEED</span>
+          <span class="hud-val" id="speed-val">1x</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas Game Screen -->
+    <div class="canvas-wrapper">
+      <canvas id="game-canvas" width="400" height="400"></canvas>
+
+      <!-- Pause / Start Overlay -->
+      <div id="overlay-screen" class="overlay-screen">
+        <h2 id="overlay-title">PRESS START</h2>
+        <p id="overlay-subtitle">Use Arrow Keys or WASD to Move</p>
+        <button id="btn-start" class="btn-primary">START GAME</button>
+      </div>
+    </div>
+
+    <!-- Controls & Difficulty Bar -->
+    <div class="control-panel">
+      <div class="speed-selector">
+        <span class="panel-label">DIFFICULTY:</span>
+        <button class="diff-btn" data-speed="120">EASY</button>
+        <button class="diff-btn active" data-speed="90">NORMAL</button>
+        <button class="diff-btn" data-speed="60">HARD</button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="btn-pause" class="btn-secondary">PAUSE (SPACE)</button>
+        <button id="btn-sound" class="btn-icon" title="Toggle Sound">🔊</button>
+      </div>
+    </div>
+
+    <!-- On-Screen D-Pad (for Touch / Mouse) -->
+    <div class="d-pad">
+      <button class="d-btn up" id="d-up" aria-label="Up">▲</button>
+      <div class="d-pad-row">
+        <button class="d-btn left" id="d-left" aria-label="Left">◀</button>
+        <button class="d-btn down" id="d-down" aria-label="Down">▼</button>
+        <button class="d-btn right" id="d-right" aria-label="Right">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

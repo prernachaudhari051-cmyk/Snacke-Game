@@ -1,0 +1,251 @@
+/* Reset & Retro Arcade Theme */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace, -apple-system, sans-serif;
+  background: radial-gradient(circle at center, #0e1726 0%, #050811 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.arcade-cabinet {
+  background: #090f1d;
+  border: 3px solid #10b981;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3), inset 0 0 15px rgba(16, 185, 129, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+}
+
+/* Header & HUD */
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: #10b981;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  margin-bottom: 14px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.hud-card {
+  flex: 1;
+  background: #030712;
+  border: 1px solid #1f2937;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.hud-label {
+  display: block;
+  font-size: 0.65rem;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.hud-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hud-val.highlight {
+  color: #fbbf24;
+}
+
+/* Canvas Screen */
+.canvas-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto 16px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #1e293b;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+#game-canvas {
+  background-color: #030712;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay Screen */
+.overlay-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+.overlay-screen.hidden {
+  display: none;
+}
+
+.overlay-screen h2 {
+  font-size: 1.7rem;
+  color: #10b981;
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+}
+
+.overlay-screen p {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+/* Control Panel */
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.speed-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #030712;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+
+.panel-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-right: 4px;
+}
+
+.diff-btn {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.diff-btn:hover {
+  color: #ffffff;
+}
+
+.diff-btn.active {
+  background: #10b981;
+  color: #030712;
+  font-weight: bold;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #10b981;
+  color: #030712;
+  padding: 12px 24px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background: #34d399;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+}
+
+.btn-secondary {
+  flex: 1;
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+.btn-secondary:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.btn-icon {
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+.btn-icon:hover {
+  background: #334155;
+}
+
+/* On-Screen D-Pad (Touch / Mouse controls) */
+.d-pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.d-pad-row {
+  display: flex;
+  gap: 6px;
+}
+
+.d-btn {
+  width: 50px;
+  height: 42px;
+  background: #111827;
+  border: 1px solid #374151;
+  color: #10b981;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-btn:active {
+  background: #10b981;
+  color: #030712;
+}
